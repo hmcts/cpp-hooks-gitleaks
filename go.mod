@@ -3,7 +3,7 @@ module github.com/zricethezav/gitleaks/v8
 go 1.19
 
 require (
-	github.com/charmbracelet/lipgloss v0.5.0
+	github.com/charmbracelet/lipgloss v0.6.0
 	github.com/fatih/semgroup v1.2.0
 	github.com/gitleaks/go-gitdiff v0.8.0
 	github.com/h2non/filetype v1.1.3
