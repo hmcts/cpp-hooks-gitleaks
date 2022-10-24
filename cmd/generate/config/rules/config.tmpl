@@ -1,0 +1,60 @@
+# This file has been auto-generated. Do not edit manually.
+# If you would like to contribute new rules, please use 
+# cmd/generate/config/main.go and follow the contributing guidelines
+# at https://github.com/zricethezav/gitleaks/blob/master/CONTRIBUTING.md
+
+# This is the default gitleaks configuration file.
+# Rules and allowlists are defined within this file.
+# Rules instruct gitleaks on what should be considered a secret.
+# Allowlists instruct gitleaks on what is allowed, i.e. not a secret.
+
+title = "gitleaks config"
+
+[allowlist]
+description = "global allow lists"
+paths = [
+    '''gitleaks.toml''',
+    '''(.*?)(jpg|gif|doc|docx|zip|xls|pdf|bin|svg|socket)$''',
+    '''(go.mod|go.sum)$''',
+    '''node_modules''',
+    '''vendor''',
+]
+
+{{ range $i, $rule := .Rules }}[[rules]]
+{{ if and $rule.SecretGroup $rule.Entropy $rule.Allowlist.StopWords }}description = "{{$rule.Description}}"
+id = "{{$rule.RuleID}}"
+regex = '''{{$rule.Regex}}'''
+secretGroup = {{ $rule.SecretGroup }}
+entropy = {{ $rule.Entropy}}
+keywords = [
+    {{ range $j, $keyword := $rule.Keywords }}"{{$keyword}}",{{end}}
+]
+[rules.allowlist]
+stopwords= [{{ range $j, $stopword := $rule.Allowlist.StopWords }}
+    "{{$stopword}}",{{end}}
+]
+{{ else if and $rule.SecretGroup $rule.Entropy }}description = "{{$rule.Description}}"
+id = "{{$rule.RuleID}}"
+regex = '''{{$rule.Regex}}'''
+secretGroup = {{ $rule.SecretGroup }}
+entropy = {{ $rule.Entropy}}
+keywords = [
+    {{ range $j, $keyword := $rule.Keywords }}"{{$keyword}}",{{end}}
+]
+
+{{ else if $rule.SecretGroup }}description = "{{$rule.Description}}"
+id = "{{$rule.RuleID}}"
+regex = '''{{$rule.Regex}}'''
+secretGroup = {{ $rule.SecretGroup }}
+keywords = [
+    {{ range $j, $keyword := $rule.Keywords }}"{{$keyword}}",{{end}}
+]
+
+{{ else }}description = "{{$rule.Description}}"
+id = "{{$rule.RuleID}}"
+regex = '''{{$rule.Regex}}'''
+keywords = [
+    {{ range $j, $keyword := $rule.Keywords }}"{{$keyword}}",{{end}}
+]
+
+{{end}}{{end}}
