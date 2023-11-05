@@ -8,7 +8,7 @@ require (
 	github.com/gitleaks/go-gitdiff v0.8.0
 	github.com/h2non/filetype v1.1.3
 	github.com/rs/zerolog v1.26.1
-	github.com/spf13/cobra v1.2.1
+	github.com/spf13/cobra v1.8.0
 	github.com/spf13/viper v1.8.1
 	github.com/stretchr/testify v1.7.0
 )
@@ -26,7 +26,7 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
-	github.com/inconshreveable/mousetrap v1.0.0 // indirect
+	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/lucasjones/reggen v0.0.0-20200904144131-37ba4fa293bb
 	github.com/magiconair/properties v1.8.5 // indirect
 	github.com/mitchellh/mapstructure v1.4.1 // indirect
@@ -43,5 +43,5 @@ require (
 	golang.org/x/text v0.3.6 // indirect
 	gopkg.in/ini.v1 v1.62.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
