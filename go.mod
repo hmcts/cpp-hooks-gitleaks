@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/charmbracelet/lipgloss v0.5.0
-	github.com/fatih/semgroup v1.2.0
+	github.com/fatih/semgroup v1.3.0
 	github.com/gitleaks/go-gitdiff v0.8.0
 	github.com/h2non/filetype v1.1.3
 	github.com/rs/zerolog v1.26.1
@@ -38,7 +38,7 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.2.0 // indirect
-	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
+	golang.org/x/sync v0.8.0 // indirect
 	golang.org/x/sys v0.0.0-20211110154304-99a53858aa08 // indirect
 	golang.org/x/text v0.3.6 // indirect
 	gopkg.in/ini.v1 v1.62.0 // indirect
